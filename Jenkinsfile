@@ -1,13 +1,11 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
+    tools {
+        nodejs 'NodeJS 18' // Use the configured NodeJS tool
+    }
 
+    stages {
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
@@ -16,7 +14,6 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'sudo npm install'
                 sh 'npm test'
             }
         }
