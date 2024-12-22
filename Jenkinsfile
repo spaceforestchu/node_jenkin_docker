@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'NodeJS 18' // Use the configured NodeJS tool
+        nodejs 'NodeJS' // Use the configured NodeJS tool
     }
 
     stages {
