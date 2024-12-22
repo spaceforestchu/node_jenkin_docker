@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'NodeJS' // Matches the name configured in Jenkins
+    }
+
     environment {
         DOCKER_IMAGE = 'mightyhamsterlord/simple_server:latest' // Replace with your Docker Hub details
     }
