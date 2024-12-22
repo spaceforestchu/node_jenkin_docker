@@ -37,7 +37,10 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh "docker build -t ${DOCKER_IMAGE} ."
+                script {
+                    // Make sure to set the correct path for your Dockerfile if it's not in the root of your project
+                    sh 'docker buildx build --platform linux/amd64 -t mightyhamsterlord/simple_server:latest .'
+                }
             }
         }
 
